@@ -1,0 +1,1469 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Explore a dataset on the modern Olympic Games, including all the Games from Athens 1896 to Rio 2016 | Mohammad Sakib Mahmood Coding Blog</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Explore a dataset on the modern Olympic Games, including all the Games from Athens 1896 to Rio 2016" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="This is my Coding Blog where everyone see my code that what i am write in." />
+<meta property="og:description" content="This is my Coding Blog where everyone see my code that what i am write in." />
+<link rel="canonical" href="https://sakibb019.github.io/Portfolio/2021/07/25/olympic_games_analysis_using_python.html" />
+<meta property="og:url" content="https://sakibb019.github.io/Portfolio/2021/07/25/olympic_games_analysis_using_python.html" />
+<meta property="og:site_name" content="Mohammad Sakib Mahmood Coding Blog" />
+<meta property="og:image" content="https://sakibb019.github.io/Portfolio/images/Olympic.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-07-25T00:00:00-05:00" />
+<script type="application/ld+json">
+{"datePublished":"2021-07-25T00:00:00-05:00","url":"https://sakibb019.github.io/Portfolio/2021/07/25/olympic_games_analysis_using_python.html","@type":"BlogPosting","image":"https://sakibb019.github.io/Portfolio/images/Olympic.png","headline":"Explore a dataset on the modern Olympic Games, including all the Games from Athens 1896 to Rio 2016","dateModified":"2021-07-25T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://sakibb019.github.io/Portfolio/2021/07/25/olympic_games_analysis_using_python.html"},"description":"This is my Coding Blog where everyone see my code that what i am write in.","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/Portfolio/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://sakibb019.github.io/Portfolio/feed.xml" title="Mohammad Sakib Mahmood Coding Blog" /><link rel="shortcut icon" type="image/x-icon" href="/Portfolio/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/Portfolio/">Mohammad Sakib Mahmood Coding Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/Portfolio/about/">About Me</a><a class="page-link" href="/Portfolio/search/">Search</a><a class="page-link" href="/Portfolio/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Explore a dataset on the modern Olympic Games, including all the Games from Athens 1896 to Rio 2016</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-07-25T00:00:00-05:00" itemprop="datePublished">
+        Jul 25, 2021
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      8 min read
+    
+</span></p>
+
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-wrap flex-justify-end">
+          <div class="px-2">
+
+    <a href="https://github.com/sakibb019/Portfolio/tree/master/_notebooks/2021-07-25-olympic_games_analysis_using_python.ipynb" role="button" target="_blank">
+<img class="notebook-badge-image" src="/Portfolio/assets/badges/github.svg" alt="View On GitHub">
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://mybinder.org/v2/gh/sakibb019/Portfolio/master?filepath=_notebooks%2F2021-07-25-olympic_games_analysis_using_python.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/Portfolio/assets/badges/binder.svg" alt="Open In Binder"/>
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://colab.research.google.com/github/sakibb019/Portfolio/blob/master/_notebooks/2021-07-25-olympic_games_analysis_using_python.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/Portfolio/assets/badges/colab.svg" alt="Open In Colab"/>
+    </a>
+</div>
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2021-07-25-olympic_games_analysis_using_python.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="https://cdn1.img.sputniknews.com/img/105872/94/1058729488_0:339:3161:2046_1000x541_80_0_0_071f83c13cdfdf01475883e69b1089f9.jpg" alt="Alt text" title="Covid-19" /></p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Collecting-information-about-both-the-data-sets">Collecting information about both the data sets<a class="anchor-link" href="#Collecting-information-about-both-the-data-sets"> </a></h3><h3 id="We-are-going-to:">We are going to:<a class="anchor-link" href="#We-are-going-to:"> </a></h3><ol>
+<li>Review the first lines of the data;</li>
+<li>Use the describe and info functions to collect statistical information, datatypes, column names and other information</li>
+</ol>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../input/athlete-events/athlete_events.csv&#39;</span><span class="p">)</span>
+<span class="n">regions</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../input/athlete-events/noc_regions.csv&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">regions</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../input/athlete-events/noc_regions.csv&#39;</span><span class="p">)</span>
+<span class="n">regions</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Joining-the-data-frames">Joining the data frames<a class="anchor-link" href="#Joining-the-data-frames"> </a></h2>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">merged</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">regions</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;NOC&#39;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">)</span>
+<span class="n">merged</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Distribution-of-the-age-of-gold-medalists">Distribution of the age of gold medalists<a class="anchor-link" href="#Distribution-of-the-age-of-gold-medalists"> </a></h2><h3 id="Let&#8217;s-start-creating-a-new-data-frame-including-only-gold-medalists.">Let&#8217;s start creating a new data frame including only gold medalists.<a class="anchor-link" href="#Let&#8217;s-start-creating-a-new-data-frame-including-only-gold-medalists."> </a></h3>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">goldMedals</span> <span class="o">=</span> <span class="n">merged</span><span class="p">[(</span><span class="n">merged</span><span class="o">.</span><span class="n">Medal</span> <span class="o">==</span> <span class="s1">&#39;Gold&#39;</span><span class="p">)]</span>
+<span class="n">goldMedals</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="I-would-like-to-have-a-plot-of-the-Age-to-see-the-distribution-but-I-need-to-check-first-if-the-Age-column-contains-NaN-values.">I would like to have a plot of the Age to see the distribution but I need to check first if the Age column contains NaN values.<a class="anchor-link" href="#I-would-like-to-have-a-plot-of-the-Age-to-see-the-distribution-but-I-need-to-check-first-if-the-Age-column-contains-NaN-values."> </a></h3>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">goldMedals</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">any</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Let&#8217;s-take-only-the-values-that-are-different-from-NaN.">Let&#8217;s take only the values that are different from NaN.<a class="anchor-link" href="#Let&#8217;s-take-only-the-values-that-are-different-from-NaN."> </a></h3>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">goldMedals</span> <span class="o">=</span> <span class="n">goldMedals</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="n">goldMedals</span><span class="p">[</span><span class="s1">&#39;Age&#39;</span><span class="p">])]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="We-can-now-create-a-countplot-to-see-the-result-of-our-work:">We can now create a countplot to see the result of our work:<a class="anchor-link" href="#We-can-now-create-a-countplot-to-see-the-result-of-our-work:"> </a></h3>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">goldMedals</span><span class="p">[</span><span class="s1">&#39;Age&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Distribution of Gold Medals&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="It-seems-that-we-have-people-with-Age-greater-that-50-with-a-gold-medal:-Let&#8217;s-know-more-about-those-people.">It seems that we have people with Age greater that 50 with a gold medal: Let&#8217;s know more about those people.<a class="anchor-link" href="#It-seems-that-we-have-people-with-Age-greater-that-50-with-a-gold-medal:-Let&#8217;s-know-more-about-those-people."> </a></h3>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">goldMedals</span><span class="p">[</span><span class="s1">&#39;ID&#39;</span><span class="p">][</span><span class="n">goldMedals</span><span class="p">[</span><span class="s1">&#39;Age&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">50</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="65-people.-Wonderul-But-which-disciplines-allows-you-to-land-a-gold-medal-after-your-fifties?">65 people. Wonderul But which disciplines allows you to land a gold medal after your fifties?<a class="anchor-link" href="#65-people.-Wonderul-But-which-disciplines-allows-you-to-land-a-gold-medal-after-your-fifties?"> </a></h3><h3 id="We-will-now-create-a-new-dataframe-called-masterDisciplines-in-which-we-will-insert-this-new-set-of-people-and-then-create-a-visualization-with-it.">We will now create a new dataframe called masterDisciplines in which we will insert this new set of people and then create a visualization with it.<a class="anchor-link" href="#We-will-now-create-a-new-dataframe-called-masterDisciplines-in-which-we-will-insert-this-new-set-of-people-and-then-create-a-visualization-with-it."> </a></h3>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">masterDisciplines</span> <span class="o">=</span> <span class="n">goldMedals</span><span class="p">[</span><span class="s1">&#39;Sport&#39;</span><span class="p">][</span><span class="n">goldMedals</span><span class="p">[</span><span class="s1">&#39;Age&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">50</span><span class="p">]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">masterDisciplines</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Gold Medals for Athletes Over 50&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="It-seems-that-our-senior-gold-medalists-are-shooters,-archers,-sailors-and,-above-all,-horse-riders!">It seems that our senior gold medalists are shooters, archers, sailors and, above all, horse riders!<a class="anchor-link" href="#It-seems-that-our-senior-gold-medalists-are-shooters,-archers,-sailors-and,-above-all,-horse-riders!"> </a></h3><h3 id="It-makes-sense:-I-cannot-imagine-a-sprinter-making-100-meters-in-10-seconds-at-55,-but-who-knows!">It makes sense: I cannot imagine a sprinter making 100 meters in 10 seconds at 55, but who knows!<a class="anchor-link" href="#It-makes-sense:-I-cannot-imagine-a-sprinter-making-100-meters-in-10-seconds-at-55,-but-who-knows!"> </a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Women-in-Athletics">Women in Athletics<a class="anchor-link" href="#Women-in-Athletics"> </a></h2><h3 id="Studying-the-data-we-can-try-to-understand-how-much-medals-we-have-only-for-women-in-the-recent-history-of-the-Summer-Games.-Let&#8217;s-create-a-filtered-dataset-:">Studying the data we can try to understand how much medals we have only for women in the recent history of the Summer Games. Let&#8217;s create a filtered dataset :<a class="anchor-link" href="#Studying-the-data-we-can-try-to-understand-how-much-medals-we-have-only-for-women-in-the-recent-history-of-the-Summer-Games.-Let&#8217;s-create-a-filtered-dataset-:"> </a></h3>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">womenInOlympics</span> <span class="o">=</span> <span class="n">merged</span><span class="p">[(</span><span class="n">merged</span><span class="o">.</span><span class="n">Sex</span> <span class="o">==</span> <span class="s1">&#39;F&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">merged</span><span class="o">.</span><span class="n">Season</span> <span class="o">==</span> <span class="s1">&#39;Summer&#39;</span><span class="p">)]</span>
+<span class="n">womenInOlympics</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="To-plot-the-curve-over-time,-let&#8217;s-create-a-plot-in-which-we-put-the-year-(on-the-x-axis)-and-count-of-the-number-of-medals-per-edition-of-the-games-(consider-that-we-will-have-more-medals-for-the-same-athlete).">To plot the curve over time, let&#8217;s create a plot in which we put the year (on the x-axis) and count of the number of medals per edition of the games (consider that we will have more medals for the same athlete).<a class="anchor-link" href="#To-plot-the-curve-over-time,-let&#8217;s-create-a-plot-in-which-we-put-the-year-(on-the-x-axis)-and-count-of-the-number-of-medals-per-edition-of-the-games-(consider-that-we-will-have-more-medals-for-the-same-athlete)."> </a></h3>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s2">&quot;darkgrid&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">womenInOlympics</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Women medals per edition of the Games&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Usually-I-cross-check-the-data:-below-I-tried-to-review-only-the-medalists-for-the-1900-Summer-edition-to-see-if-the-visualization-is-correct.">Usually I cross-check the data: below I tried to review only the medalists for the 1900 Summer edition to see if the visualization is correct.<a class="anchor-link" href="#Usually-I-cross-check-the-data:-below-I-tried-to-review-only-the-medalists-for-the-1900-Summer-edition-to-see-if-the-visualization-is-correct."> </a></h3>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">womenInOlympics</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">womenInOlympics</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1900</span><span class="p">]</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Okay,-let&#8217;s-count-the-rows-(same-code-as-above-adding-the-count()-function-and-filtering-only-for-ID)">Okay, let&#8217;s count the rows (same code as above adding the count() function and filtering only for ID)<a class="anchor-link" href="#Okay,-let&#8217;s-count-the-rows-(same-code-as-above-adding-the-count()-function-and-filtering-only-for-ID)"> </a></h3>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">womenInOlympics</span><span class="p">[</span><span class="s1">&#39;ID&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">womenInOlympics</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1900</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="So-we-have-33-records-(with-repetitions,-for-example-&#8216;Marion-Jones-(-Farquhar)&#8217;-won-a-medal-both-for-Tennis-Women&#8217;s-Singles-and-Tennis-Mixed-Doubles-&#8211;-To-be-sure-I-cross-checked-also-with-Wikipedia-and-the-outcome-seems-correct).">So we have 33 records (with repetitions, for example &#8216;Marion Jones (-Farquhar)&#8217; won a medal both for Tennis Women&#8217;s Singles and Tennis Mixed Doubles &#8211; To be sure I cross-checked also with Wikipedia and the outcome seems correct).<a class="anchor-link" href="#So-we-have-33-records-(with-repetitions,-for-example-&#8216;Marion-Jones-(-Farquhar)&#8217;-won-a-medal-both-for-Tennis-Women&#8217;s-Singles-and-Tennis-Mixed-Doubles-&#8211;-To-be-sure-I-cross-checked-also-with-Wikipedia-and-the-outcome-seems-correct)."> </a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Medals-per-country">Medals per country<a class="anchor-link" href="#Medals-per-country"> </a></h2><h3 id="Let&#8217;s-now-review-the-top-5-gold-medal-countries:">Let&#8217;s now review the top 5 gold medal countries:<a class="anchor-link" href="#Let&#8217;s-now-review-the-top-5-gold-medal-countries:"> </a></h3>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">goldMedals</span><span class="o">.</span><span class="n">region</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Medal&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Let&#8217;s-plot-this:">Let&#8217;s plot this:<a class="anchor-link" href="#Let&#8217;s-plot-this:"> </a></h3>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">totalGoldMedals</span> <span class="o">=</span> <span class="n">goldMedals</span><span class="o">.</span><span class="n">region</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Medal&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">g</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">catplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;index&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;Medal&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">totalGoldMedals</span><span class="p">,</span>
+                <span class="n">height</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s2">&quot;bar&quot;</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="s2">&quot;muted&quot;</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">despine</span><span class="p">(</span><span class="n">left</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">set_xlabels</span><span class="p">(</span><span class="s2">&quot;Top 5 countries&quot;</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">set_ylabels</span><span class="p">(</span><span class="s2">&quot;Number of Medals&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Medals per Country&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="The-USA-seems-to-be-the-most-winning-country.">The USA seems to be the most winning country.<a class="anchor-link" href="#The-USA-seems-to-be-the-most-winning-country."> </a></h3><h3 id="But-which-are-the-most-awarded-disciplines-of-American-Athletes?">But which are the most awarded disciplines of American Athletes?<a class="anchor-link" href="#But-which-are-the-most-awarded-disciplines-of-American-Athletes?"> </a></h3><h1 id="Disciplines-with-the-greatest-number-of-Gold-Medals">Disciplines with the greatest number of Gold Medals<a class="anchor-link" href="#Disciplines-with-the-greatest-number-of-Gold-Medals"> </a></h1><h3 id="Let&#8217;s-create-a-dataframe-to-filter-the-gold-medals-only-for-the-USA.">Let&#8217;s create a dataframe to filter the gold medals only for the USA.<a class="anchor-link" href="#Let&#8217;s-create-a-dataframe-to-filter-the-gold-medals-only-for-the-USA."> </a></h3>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">goldMedalsUSA</span> <span class="o">=</span> <span class="n">goldMedals</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">goldMedals</span><span class="p">[</span><span class="s1">&#39;NOC&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;USA&#39;</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Done!-Now,-we-can-count-the-medals-per-discipline">Done! Now, we can count the medals per discipline<a class="anchor-link" href="#Done!-Now,-we-can-count-the-medals-per-discipline"> </a></h3>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">goldMedalsUSA</span><span class="o">.</span><span class="n">Event</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Medal&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Let&#8217;s-slice-the-dataframe-using-only-the-data-of-male-athletes-to-better-review-it:">Let&#8217;s slice the dataframe using only the data of male athletes to better review it:<a class="anchor-link" href="#Let&#8217;s-slice-the-dataframe-using-only-the-data-of-male-athletes-to-better-review-it:"> </a></h3>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">basketballGoldUSA</span> <span class="o">=</span> <span class="n">goldMedalsUSA</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">goldMedalsUSA</span><span class="p">[</span><span class="s1">&#39;Sport&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Basketball&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">goldMedalsUSA</span><span class="p">[</span><span class="s1">&#39;Sex&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;M&#39;</span><span class="p">)]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">([</span><span class="s1">&#39;Year&#39;</span><span class="p">])</span>
+<span class="n">basketballGoldUSA</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="What-we-supposed-is-true:-the-medals-are-not-grouped-by-Edition/Team-but-we-were-counting-the-gold-medals-of-each-member-of-the-team!">What we supposed is true: the medals are not grouped by Edition/Team but we were counting the gold medals of each member of the team!<a class="anchor-link" href="#What-we-supposed-is-true:-the-medals-are-not-grouped-by-Edition/Team-but-we-were-counting-the-gold-medals-of-each-member-of-the-team!"> </a></h3><h3 id="Let&#8217;s-proceed-grouping-by-year-the-athletes-&#8211;-the-idea-is-to-create-a-new-dataframe-to-make-a-pre-filter-using-only-the-first-record-for-each-member-of-the-team.">Let&#8217;s proceed grouping by year the athletes &#8211; the idea is to create a new dataframe to make a pre-filter using only the first record for each member of the team.<a class="anchor-link" href="#Let&#8217;s-proceed-grouping-by-year-the-athletes-&#8211;-the-idea-is-to-create-a-new-dataframe-to-make-a-pre-filter-using-only-the-first-record-for-each-member-of-the-team."> </a></h3>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">groupedBasketUSA</span> <span class="o">=</span> <span class="n">basketballGoldUSA</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;Year&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">first</span><span class="p">()</span>
+<span class="n">groupedBasketUSA</span>
+<span class="n">groupedBasketUSA</span><span class="p">[</span><span class="s1">&#39;ID&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="What-is-the-median-height/weight-of-an-Olympic-medalist?">What is the median height/weight of an Olympic medalist?<a class="anchor-link" href="#What-is-the-median-height/weight-of-an-Olympic-medalist?"> </a></h2><h3 id="Let&#8217;s-try-to-plot-a-scatterplot-of-height-vs-weight-to-see-the-distribution-of-values-(without-grouping-by-discipline).">Let&#8217;s try to plot a scatterplot of height vs weight to see the distribution of values (without grouping by discipline).<a class="anchor-link" href="#Let&#8217;s-try-to-plot-a-scatterplot-of-height-vs-weight-to-see-the-distribution-of-values-(without-grouping-by-discipline)."> </a></h3><h3 id="First-of-all,-we-have-to-take-again-the-goldMedals-dataframe">First of all, we have to take again the goldMedals dataframe<a class="anchor-link" href="#First-of-all,-we-have-to-take-again-the-goldMedals-dataframe"> </a></h3>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">goldMedals</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="We-can-see-that-we-have-NaN-values-both-in-height-and-weight-columns">We can see that we have NaN values both in height and weight columns<a class="anchor-link" href="#We-can-see-that-we-have-NaN-values-both-in-height-and-weight-columns"> </a></h3><h3 id="At-this-point,-we-can-act-as-follows:">At this point, we can act as follows:<a class="anchor-link" href="#At-this-point,-we-can-act-as-follows:"> </a></h3><ol>
+<li>Using only the rows that has a value in the Height and Weight columns;</li>
+<li>Replace the value with the mean of the column.</li>
+</ol>
+<h3 id="Solution-2-in-my-opinion-it-is-not-the-best-way-to-go:-we-are-talking-about-data-of-athletes-of-different-ages-and-different-disciplines-(that-have-done-different-training).">Solution 2 in my opinion it is not the best way to go: we are talking about data of athletes of different ages and different disciplines (that have done different training).<a class="anchor-link" href="#Solution-2-in-my-opinion-it-is-not-the-best-way-to-go:-we-are-talking-about-data-of-athletes-of-different-ages-and-different-disciplines-(that-have-done-different-training)."> </a></h3><h3 id="Let&#8217;s-go-with-solution-1.">Let&#8217;s go with solution 1.<a class="anchor-link" href="#Let&#8217;s-go-with-solution-1."> </a></h3><h3 id="The-first-thing-to-do-is-to-collect-general-information-about-the-dataframe-that-we-have-to-use:-goldMedals.">The first thing to do is to collect general information about the dataframe that we have to use: goldMedals.<a class="anchor-link" href="#The-first-thing-to-do-is-to-collect-general-information-about-the-dataframe-that-we-have-to-use:-goldMedals."> </a></h3>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">goldMedals</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Okay,-we-have-more-than-13.000-rows.">Okay, we have more than 13.000 rows.<a class="anchor-link" href="#Okay,-we-have-more-than-13.000-rows."> </a></h3><h3 id="We-will-now-create-a-dataframe-filtering-only-the-rows-that-has-the-column-Height-and-Weight-populated.">We will now create a dataframe filtering only the rows that has the column Height and Weight populated.<a class="anchor-link" href="#We-will-now-create-a-dataframe-filtering-only-the-rows-that-has-the-column-Height-and-Weight-populated."> </a></h3>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">notNullMedals</span> <span class="o">=</span> <span class="n">goldMedals</span><span class="p">[(</span><span class="n">goldMedals</span><span class="p">[</span><span class="s1">&#39;Height&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">notnull</span><span class="p">())</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">goldMedals</span><span class="p">[</span><span class="s1">&#39;Weight&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">notnull</span><span class="p">())]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;Height&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;Weight&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">notNullMedals</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Height vs Weight of Olympic Medalists&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="The-vast-majority-of-the-samples-show-a-linear-relation-between-height-and-weight-(the-more-the-weight,-the-more-the-height).">The vast majority of the samples show a linear relation between height and weight (the more the weight, the more the height).<a class="anchor-link" href="#The-vast-majority-of-the-samples-show-a-linear-relation-between-height-and-weight-(the-more-the-weight,-the-more-the-height)."> </a></h3><h3 id="We-have-exceptions-and-I-am-willing-to-know-more!">We have exceptions and I am willing to know more!<a class="anchor-link" href="#We-have-exceptions-and-I-am-willing-to-know-more!"> </a></h3><h3 id="For-example,-let&#8217;s-see-which-is-the-athlete-that-weighs-more-than-160-kilograms.">For example, let&#8217;s see which is the athlete that weighs more than 160 kilograms.<a class="anchor-link" href="#For-example,-let&#8217;s-see-which-is-the-athlete-that-weighs-more-than-160-kilograms."> </a></h3>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">notNullMedals</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">notNullMedals</span><span class="p">[</span><span class="s1">&#39;Weight&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">160</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">MenOverTime</span> <span class="o">=</span> <span class="n">merged</span><span class="p">[(</span><span class="n">merged</span><span class="o">.</span><span class="n">Sex</span> <span class="o">==</span> <span class="s1">&#39;M&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">merged</span><span class="o">.</span><span class="n">Season</span> <span class="o">==</span> <span class="s1">&#39;Summer&#39;</span><span class="p">)]</span>
+<span class="n">WomenOverTime</span> <span class="o">=</span> <span class="n">merged</span><span class="p">[(</span><span class="n">merged</span><span class="o">.</span><span class="n">Sex</span> <span class="o">==</span> <span class="s1">&#39;F&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">merged</span><span class="o">.</span><span class="n">Season</span> <span class="o">==</span> <span class="s1">&#39;Summer&#39;</span><span class="p">)]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">MenOverTime</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">part</span> <span class="o">=</span> <span class="n">MenOverTime</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Year&#39;</span><span class="p">)[</span><span class="s1">&#39;Sex&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">part</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;M&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Variation of Male Athletes over time&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">part</span> <span class="o">=</span> <span class="n">WomenOverTime</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Year&#39;</span><span class="p">)[</span><span class="s1">&#39;Sex&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">part</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;F&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Variation of Female Athletes over time&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="What-I-immediately-saw-is-that-for-women:">What I immediately saw is that for women:<a class="anchor-link" href="#What-I-immediately-saw-is-that-for-women:"> </a></h3><ol>
+<li>We have a steep increase in the population;</li>
+<li>The grow is constant.</li>
+</ol>
+<h3 id="On-the-other-hand,-the-grow-for-men-seems-less-strong:">On the other hand, the grow for men seems less strong:<a class="anchor-link" href="#On-the-other-hand,-the-grow-for-men-seems-less-strong:"> </a></h3><ol>
+<li>After the 1990 we can see a relevant decrease in the number of male athletes at the summer games;</li>
+<li>The growth has slowly restarted recently.</li>
+</ol>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span> <span class="s1">&#39;Age&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">MenOverTime</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Variation of Age for Male Athletes over time&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="What-is-strange-for-me-is-the-age-of-some-athletes-in-the-games-between-the-1924-and-the-1948:-let&#8217;s-check-all-the-people-with-age-greater-than-80.">What is strange for me is the age of some athletes in the games between the 1924 and the 1948: let&#8217;s check all the people with age greater than 80.<a class="anchor-link" href="#What-is-strange-for-me-is-the-age-of-some-athletes-in-the-games-between-the-1924-and-the-1948:-let&#8217;s-check-all-the-people-with-age-greater-than-80."> </a></h3>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">MenOverTime</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">MenOverTime</span><span class="p">[</span><span class="s1">&#39;Age&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">80</span><span class="p">]</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span> <span class="s1">&#39;Age&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">WomenOverTime</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Variation of Age for Female Athletes over time&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Interesting-points-for-me:">Interesting points for me:<a class="anchor-link" href="#Interesting-points-for-me:"> </a></h3><ul>
+<li>Generally, the age distribution starts has a lower minimum and a lower maximum;</li>
+<li>In 1904 the age distribution is strongly different from the other Olympics: let’s know more about this point:</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">WomenOverTime</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">WomenOverTime</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1904</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="We-will-now-try-using-a-pointplot-to-visualize-the-variation-in-weight-over-athletes.">We will now try using a pointplot to visualize the variation in weight over athletes.<a class="anchor-link" href="#We-will-now-try-using-a-pointplot-to-visualize-the-variation-in-weight-over-athletes."> </a></h3><h3 id="The-first-graph-will-show-data-for-men,-the-second-for-women:">The first graph will show data for men, the second for women:<a class="anchor-link" href="#The-first-graph-will-show-data-for-men,-the-second-for-women:"> </a></h3>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">pointplot</span><span class="p">(</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span> <span class="s1">&#39;Weight&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">MenOverTime</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Variation of Weight for Male Athletes over time&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">pointplot</span><span class="p">(</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span> <span class="s1">&#39;Weight&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">WomenOverTime</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Variation of Weight for Female Athletes over time&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="What-we-can-see-is-that-it-seems-that-we-do-not-have-data-for-women-before-1924.-Let&#8217;s-try-filtering-all-the-women-athletes-for-that-period-to-review-this-point:">What we can see is that it seems that we do not have data for women before 1924. Let&#8217;s try filtering all the women athletes for that period to review this point:<a class="anchor-link" href="#What-we-can-see-is-that-it-seems-that-we-do-not-have-data-for-women-before-1924.-Let&#8217;s-try-filtering-all-the-women-athletes-for-that-period-to-review-this-point:"> </a></h3>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">womenInOlympics</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">womenInOlympics</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">1924</span><span class="p">]</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Using-the-same-pointplot-(with-a-different-palette)-we-can-plot-the-weight-change-along-time.">Using the same pointplot (with a different palette) we can plot the weight change along time.<a class="anchor-link" href="#Using-the-same-pointplot-(with-a-different-palette)-we-can-plot-the-weight-change-along-time."> </a></h3><h3 id="The-first-graph-will-show-the-information-for-men,-the-second-for-women:">The first graph will show the information for men, the second for women:<a class="anchor-link" href="#The-first-graph-will-show-the-information-for-men,-the-second-for-women:"> </a></h3>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">womenInOlympics</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">womenInOlympics</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">1924</span><span class="p">]</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">pointplot</span><span class="p">(</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span> <span class="s1">&#39;Height&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">WomenOverTime</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="s1">&#39;Set2&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Variation of Height for Female Athletes over time&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="What-we-may-see:">What we may see:<a class="anchor-link" href="#What-we-may-see:"> </a></h3><ul>
+<li>For both men and women, the height is incrementing over time but it is decreasing between the 2012 and the 2016.</li>
+<li>For women we have a peak between 1928 and 1948, let’s deepen this point:</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">WomenOverTime</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">WomenOverTime</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">1924</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">WomenOverTime</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">1952</span><span class="p">)]</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">MenOverTime</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">itMenOverTime</span> <span class="o">=</span> <span class="n">MenOverTime</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">MenOverTime</span><span class="p">[</span><span class="s1">&#39;region&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Italy&#39;</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s2">&quot;darkgrid&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">itMenOverTime</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="s1">&#39;Set2&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Variation of Age for Italian Male Athletes over time&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="now-we-can-plot-the-change-over-time:">now we can plot the change over time:<a class="anchor-link" href="#now-we-can-plot-the-change-over-time:"> </a></h3>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">itWomenOverTime</span> <span class="o">=</span> <span class="n">WomenOverTime</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">WomenOverTime</span><span class="p">[</span><span class="s1">&#39;region&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Italy&#39;</span><span class="p">]</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s2">&quot;darkgrid&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">itWomenOverTime</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="s1">&#39;Set2&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Variation of Age for Italian Female Athletes over time&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Let&#8217;s-first-of-all-isolate-all-the-discipline-of-the-Olympics-dataframe.">Let&#8217;s first of all isolate all the discipline of the Olympics dataframe.<a class="anchor-link" href="#Let&#8217;s-first-of-all-isolate-all-the-discipline-of-the-Olympics-dataframe."> </a></h3><h3 id="My-idea-is-to-see-if-Gymnastics-is-called-differently-or-if-there-is-any-type.">My idea is to see if Gymnastics is called differently or if there is any type.<a class="anchor-link" href="#My-idea-is-to-see-if-Gymnastics-is-called-differently-or-if-there-is-any-type."> </a></h3>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">MenOverTime</span><span class="p">[</span><span class="s1">&#39;Sport&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Okay,-the-string-to-use-to-filter-is-&#8216;Gymnastics&#8217;:-let&#8217;s-create-two-new-dataframes-for-men-and-women.">Okay, the string to use to filter is &#8216;Gymnastics&#8217;: let&#8217;s create two new dataframes for men and women.<a class="anchor-link" href="#Okay,-the-string-to-use-to-filter-is-&#8216;Gymnastics&#8217;:-let&#8217;s-create-two-new-dataframes-for-men-and-women."> </a></h3>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">gymMenOverTime</span> <span class="o">=</span> <span class="n">MenOverTime</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">MenOverTime</span><span class="p">[</span><span class="s1">&#39;Sport&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Gymnastics&#39;</span><span class="p">]</span>
+<span class="n">gymWomenOverTime</span> <span class="o">=</span> <span class="n">WomenOverTime</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">WomenOverTime</span><span class="p">[</span><span class="s1">&#39;Sport&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Gymnastics&#39;</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Okay:-let&#8217;s-now-create-our-plot-for-male-and-female-athletes-and-then-we-can-make-our-observations">Okay: let&#8217;s now create our plot for male and female athletes and then we can make our observations<a class="anchor-link" href="#Okay:-let&#8217;s-now-create-our-plot-for-male-and-female-athletes-and-then-we-can-make-our-observations"> </a></h3>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span> <span class="s1">&#39;Weight&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">gymMenOverTime</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Weight over year for Male Gymnasts&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="A-few-things-I-noticed:">A few things I noticed:<a class="anchor-link" href="#A-few-things-I-noticed:"> </a></h3><ol>
+<li>The weight for female Gymnasts has go down for 60 to 50 kilograms on average;</li>
+<li>The weight for men has been more or less stable since 1964;</li>
+<li>The height is more stable for both men and women.
+### Also, men weight data from 1924 seems missing: let’s check.</li>
+</ol>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span> <span class="s1">&#39;Height&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">gymMenOverTime</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Height over year for Male Gymnasts&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span> <span class="s1">&#39;Weight&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">gymWomenOverTime</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Weight over year for Female Gymnasts&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span> <span class="s1">&#39;Height&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">gymWomenOverTime</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Height over year for Female Gymnasts&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">gymMenOverTime</span><span class="p">[</span><span class="s1">&#39;Weight&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">gymMenOverTime</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1924</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Weightlifting">Weightlifting<a class="anchor-link" href="#Weightlifting"> </a></h2><h3 id="Let&#8217;s-work-on-an-analysis-similar-to-what-we-have-done-for-Gymnastics-also-for-the-Lifters.">Let&#8217;s work on an analysis similar to what we have done for Gymnastics also for the Lifters.<a class="anchor-link" href="#Let&#8217;s-work-on-an-analysis-similar-to-what-we-have-done-for-Gymnastics-also-for-the-Lifters."> </a></h3><h3 id="We-can-start-creating-a-new,-dedicated-dataframe">We can start creating a new, dedicated dataframe<a class="anchor-link" href="#We-can-start-creating-a-new,-dedicated-dataframe"> </a></h3>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">wlMenOverTime</span> <span class="o">=</span> <span class="n">MenOverTime</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">MenOverTime</span><span class="p">[</span><span class="s1">&#39;Sport&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Weightlifting&#39;</span><span class="p">]</span>
+<span class="n">wlWomenOverTime</span> <span class="o">=</span> <span class="n">WomenOverTime</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">WomenOverTime</span><span class="p">[</span><span class="s1">&#39;Sport&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Weightlifting&#39;</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Okay:-let&#8217;s-now-create-our-plot-for-male-and-female-athletes-and-then-we-can-make-our-observations">Okay: let&#8217;s now create our plot for male and female athletes and then we can make our observations<a class="anchor-link" href="#Okay:-let&#8217;s-now-create-our-plot-for-male-and-female-athletes-and-then-we-can-make-our-observations"> </a></h3>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">pointplot</span><span class="p">(</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span> <span class="s1">&#39;Weight&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">wlMenOverTime</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="s1">&#39;Set2&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Weight over year for Male Lifters&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">pointplot</span><span class="p">(</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span> <span class="s1">&#39;Height&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">wlMenOverTime</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="s1">&#39;Set2&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Height over year for Male Lifters&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">pointplot</span><span class="p">(</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span> <span class="s1">&#39;Weight&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">wlWomenOverTime</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Weight over year for Female Lifters&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">pointplot</span><span class="p">(</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span> <span class="s1">&#39;Height&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">wlWomenOverTime</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Height over year for Female Lifters&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+</div>
+
+
+
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="sakibb019/Portfolio"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/Portfolio/2021/07/25/olympic_games_analysis_using_python.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/Portfolio/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/Portfolio/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/Portfolio/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>This is my Coding Blog where everyone see my code that what i am write in.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/sakibb019" title="sakibb019"><svg class="svg-icon grey"><use xlink:href="/Portfolio/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://www.linkedin.com/in/mdsakibmahmood" title="mdsakibmahmood"><svg class="svg-icon grey"><use xlink:href="/Portfolio/assets/minima-social-icons.svg#linkedin"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
