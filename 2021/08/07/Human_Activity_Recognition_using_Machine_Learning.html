@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Human Activity Recognition using Machine Learning | Mohammad Sakib Mahmood Coding Blog</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Human Activity Recognition using Machine Learning" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Human activity recognition is the problem of classifying sequences of data recorded by specialized harnesses or smart phones into known well-defined Human activities." />
+<meta property="og:description" content="Human activity recognition is the problem of classifying sequences of data recorded by specialized harnesses or smart phones into known well-defined Human activities." />
+<link rel="canonical" href="https://sakibb019.github.io/Portfolio/2021/08/07/Human_Activity_Recognition_using_Machine_Learning.html" />
+<meta property="og:url" content="https://sakibb019.github.io/Portfolio/2021/08/07/Human_Activity_Recognition_using_Machine_Learning.html" />
+<meta property="og:site_name" content="Mohammad Sakib Mahmood Coding Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-08-07T00:00:00-05:00" />
+<script type="application/ld+json">
+{"datePublished":"2021-08-07T00:00:00-05:00","url":"https://sakibb019.github.io/Portfolio/2021/08/07/Human_Activity_Recognition_using_Machine_Learning.html","@type":"BlogPosting","headline":"Human Activity Recognition using Machine Learning","dateModified":"2021-08-07T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://sakibb019.github.io/Portfolio/2021/08/07/Human_Activity_Recognition_using_Machine_Learning.html"},"description":"Human activity recognition is the problem of classifying sequences of data recorded by specialized harnesses or smart phones into known well-defined Human activities.","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/Portfolio/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://sakibb019.github.io/Portfolio/feed.xml" title="Mohammad Sakib Mahmood Coding Blog" /><link rel="shortcut icon" type="image/x-icon" href="/Portfolio/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/Portfolio/">Mohammad Sakib Mahmood Coding Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/Portfolio/about/">About Me</a><a class="page-link" href="/Portfolio/search/">Search</a><a class="page-link" href="/Portfolio/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Human Activity Recognition using Machine Learning</h1><p class="page-description">Human activity recognition is the problem of classifying sequences of data recorded by specialized harnesses or smart phones into known well-defined Human activities.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-08-07T00:00:00-05:00" itemprop="datePublished">
+        Aug 7, 2021
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      28 min read
+    
+</span></p>
+
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-wrap flex-justify-end">
+          
+          <div class="px-2">
+    <a href="https://mybinder.org/v2/gh/sakibb019/Portfolio/master?filepath=_notebooks%2F2021-08-07-Human_Activity_Recognition_using_Machine_Learning.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/Portfolio/assets/badges/binder.svg" alt="Open In Binder"/>
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://colab.research.google.com/github/sakibb019/Portfolio/blob/master/_notebooks/2021-08-07-Human_Activity_Recognition_using_Machine_Learning.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/Portfolio/assets/badges/colab.svg" alt="Open In Colab"/>
+    </a>
+</div>
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2021-08-07-Human_Activity_Recognition_using_Machine_Learning.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">train</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;train-1.csv&quot;</span><span class="p">)</span>
+<span class="n">test</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;test.csv&quot;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">train</span><span class="p">[</span><span class="s1">&#39;Data&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Train&#39;</span>
+<span class="n">test</span><span class="p">[</span><span class="s1">&#39;Data&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Test&#39;</span>
+<span class="n">both</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">train</span><span class="p">,</span> <span class="n">test</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">both</span><span class="p">[</span><span class="s1">&#39;subject&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;#&#39;</span> <span class="o">+</span> <span class="n">both</span><span class="p">[</span><span class="s1">&#39;subject&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">train</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">test</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>((7352, 564), (2947, 564))</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">both</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>tBodyAcc-mean()-X</th>
+      <th>tBodyAcc-mean()-Y</th>
+      <th>tBodyAcc-mean()-Z</th>
+      <th>tBodyAcc-std()-X</th>
+      <th>tBodyAcc-std()-Y</th>
+      <th>tBodyAcc-std()-Z</th>
+      <th>tBodyAcc-mad()-X</th>
+      <th>tBodyAcc-mad()-Y</th>
+      <th>tBodyAcc-mad()-Z</th>
+      <th>tBodyAcc-max()-X</th>
+      <th>...</th>
+      <th>angle(tBodyAccMean,gravity)</th>
+      <th>angle(tBodyAccJerkMean),gravityMean)</th>
+      <th>angle(tBodyGyroMean,gravityMean)</th>
+      <th>angle(tBodyGyroJerkMean,gravityMean)</th>
+      <th>angle(X,gravityMean)</th>
+      <th>angle(Y,gravityMean)</th>
+      <th>angle(Z,gravityMean)</th>
+      <th>subject</th>
+      <th>Activity</th>
+      <th>Data</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.288585</td>
+      <td>-0.020294</td>
+      <td>-0.132905</td>
+      <td>-0.995279</td>
+      <td>-0.983111</td>
+      <td>-0.913526</td>
+      <td>-0.995112</td>
+      <td>-0.983185</td>
+      <td>-0.923527</td>
+      <td>-0.934724</td>
+      <td>...</td>
+      <td>-0.112754</td>
+      <td>0.030400</td>
+      <td>-0.464761</td>
+      <td>-0.018446</td>
+      <td>-0.841247</td>
+      <td>0.179941</td>
+      <td>-0.058627</td>
+      <td>#1</td>
+      <td>STANDING</td>
+      <td>Train</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.278419</td>
+      <td>-0.016411</td>
+      <td>-0.123520</td>
+      <td>-0.998245</td>
+      <td>-0.975300</td>
+      <td>-0.960322</td>
+      <td>-0.998807</td>
+      <td>-0.974914</td>
+      <td>-0.957686</td>
+      <td>-0.943068</td>
+      <td>...</td>
+      <td>0.053477</td>
+      <td>-0.007435</td>
+      <td>-0.732626</td>
+      <td>0.703511</td>
+      <td>-0.844788</td>
+      <td>0.180289</td>
+      <td>-0.054317</td>
+      <td>#1</td>
+      <td>STANDING</td>
+      <td>Train</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.279653</td>
+      <td>-0.019467</td>
+      <td>-0.113462</td>
+      <td>-0.995380</td>
+      <td>-0.967187</td>
+      <td>-0.978944</td>
+      <td>-0.996520</td>
+      <td>-0.963668</td>
+      <td>-0.977469</td>
+      <td>-0.938692</td>
+      <td>...</td>
+      <td>-0.118559</td>
+      <td>0.177899</td>
+      <td>0.100699</td>
+      <td>0.808529</td>
+      <td>-0.848933</td>
+      <td>0.180637</td>
+      <td>-0.049118</td>
+      <td>#1</td>
+      <td>STANDING</td>
+      <td>Train</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.279174</td>
+      <td>-0.026201</td>
+      <td>-0.123283</td>
+      <td>-0.996091</td>
+      <td>-0.983403</td>
+      <td>-0.990675</td>
+      <td>-0.997099</td>
+      <td>-0.982750</td>
+      <td>-0.989302</td>
+      <td>-0.938692</td>
+      <td>...</td>
+      <td>-0.036788</td>
+      <td>-0.012892</td>
+      <td>0.640011</td>
+      <td>-0.485366</td>
+      <td>-0.848649</td>
+      <td>0.181935</td>
+      <td>-0.047663</td>
+      <td>#1</td>
+      <td>STANDING</td>
+      <td>Train</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.276629</td>
+      <td>-0.016570</td>
+      <td>-0.115362</td>
+      <td>-0.998139</td>
+      <td>-0.980817</td>
+      <td>-0.990482</td>
+      <td>-0.998321</td>
+      <td>-0.979672</td>
+      <td>-0.990441</td>
+      <td>-0.942469</td>
+      <td>...</td>
+      <td>0.123320</td>
+      <td>0.122542</td>
+      <td>0.693578</td>
+      <td>-0.615971</td>
+      <td>-0.847865</td>
+      <td>0.185151</td>
+      <td>-0.043892</td>
+      <td>#1</td>
+      <td>STANDING</td>
+      <td>Train</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 564 columns</p>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">both</span><span class="o">.</span><span class="n">dtypes</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>float64    561
+object       3
+dtype: int64</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">basic_details</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+    <span class="n">b</span><span class="p">[</span><span class="s1">&#39;Missing value&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+    <span class="n">b</span><span class="p">[</span><span class="s1">&#39;N unique value&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span>
+    <span class="n">b</span><span class="p">[</span><span class="s1">&#39;dtype&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">dtypes</span>
+    <span class="k">return</span> <span class="n">b</span>
+<span class="n">basic_details</span><span class="p">(</span><span class="n">both</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Missing value</th>
+      <th>N unique value</th>
+      <th>dtype</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>tBodyAcc-mean()-X</th>
+      <td>0</td>
+      <td>10292</td>
+      <td>float64</td>
+    </tr>
+    <tr>
+      <th>tBodyAcc-mean()-Y</th>
+      <td>0</td>
+      <td>10299</td>
+      <td>float64</td>
+    </tr>
+    <tr>
+      <th>tBodyAcc-mean()-Z</th>
+      <td>0</td>
+      <td>10293</td>
+      <td>float64</td>
+    </tr>
+    <tr>
+      <th>tBodyAcc-std()-X</th>
+      <td>0</td>
+      <td>10295</td>
+      <td>float64</td>
+    </tr>
+    <tr>
+      <th>tBodyAcc-std()-Y</th>
+      <td>0</td>
+      <td>10297</td>
+      <td>float64</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>angle(Y,gravityMean)</th>
+      <td>0</td>
+      <td>10299</td>
+      <td>float64</td>
+    </tr>
+    <tr>
+      <th>angle(Z,gravityMean)</th>
+      <td>0</td>
+      <td>10299</td>
+      <td>float64</td>
+    </tr>
+    <tr>
+      <th>subject</th>
+      <td>0</td>
+      <td>30</td>
+      <td>object</td>
+    </tr>
+    <tr>
+      <th>Activity</th>
+      <td>0</td>
+      <td>6</td>
+      <td>object</td>
+    </tr>
+    <tr>
+      <th>Data</th>
+      <td>0</td>
+      <td>2</td>
+      <td>object</td>
+    </tr>
+  </tbody>
+</table>
+<p>564 rows × 3 columns</p>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">activity</span> <span class="o">=</span> <span class="n">both</span><span class="p">[</span><span class="s1">&#39;Activity&#39;</span><span class="p">]</span>
+<span class="n">label_counts</span> <span class="o">=</span> <span class="n">activity</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span> <span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">label_counts</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">label_counts</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;BarContainer object of 6 artists&gt;</pre>
+</div>
+
+</div>
+
+<div class="output_area">
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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
+" />
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Data</span> <span class="o">=</span> <span class="n">both</span><span class="p">[</span><span class="s1">&#39;Data&#39;</span><span class="p">]</span>
+<span class="n">Subject</span> <span class="o">=</span> <span class="n">both</span><span class="p">[</span><span class="s1">&#39;subject&#39;</span><span class="p">]</span>
+<span class="n">train</span> <span class="o">=</span> <span class="n">both</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">train</span> <span class="o">=</span> <span class="n">train</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;Data&#39;</span><span class="p">,</span><span class="s1">&#39;subject&#39;</span><span class="p">,</span><span class="s1">&#39;Activity&#39;</span><span class="p">],</span> <span class="n">axis</span> <span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
+<span class="n">slc</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
+<span class="n">train</span> <span class="o">=</span> <span class="n">slc</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">train</span><span class="p">)</span>
+
+<span class="c1"># dimensionality reduction</span>
+<span class="kn">from</span> <span class="nn">sklearn.decomposition</span> <span class="kn">import</span> <span class="n">PCA</span>
+<span class="n">pca</span> <span class="o">=</span> <span class="n">PCA</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">train</span> <span class="o">=</span> <span class="n">pca</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">train</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">train</span><span class="p">,</span> <span class="n">activity</span><span class="p">,</span> <span class="n">test_size</span> <span class="o">=</span> <span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">num_folds</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">seed</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">scoring</span> <span class="o">=</span> <span class="s1">&#39;accuracy&#39;</span>
+<span class="n">results</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">accuracy</span> <span class="o">=</span> <span class="p">{}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="kn">import</span> <span class="n">KNeighborsClassifier</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">confusion_matrix</span><span class="p">,</span> <span class="n">accuracy_score</span><span class="p">,</span> <span class="n">classification_report</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">KFold</span><span class="p">,</span> <span class="n">cross_val_score</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">KNeighborsClassifier</span><span class="p">(</span><span class="n">algorithm</span><span class="o">=</span> <span class="s1">&#39;auto&#39;</span><span class="p">,</span> <span class="n">n_neighbors</span><span class="o">=</span> <span class="mi">8</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span> <span class="s1">&#39;distance&#39;</span><span class="p">)</span>
+
+<span class="n">_</span> <span class="o">=</span> <span class="n">cross_val_score</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="n">scoring</span><span class="p">)</span>
+<span class="n">results</span><span class="p">[</span><span class="s2">&quot;GScv&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">_</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="n">_</span><span class="o">.</span><span class="n">std</span><span class="p">())</span>
+
+<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span> 
+<span class="n">y_predict</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+
+<span class="n">accuracy</span><span class="p">[</span><span class="s2">&quot;GScv&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_predict</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">classification_report</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_predict</span><span class="p">))</span>
+
+<span class="n">cm</span><span class="o">=</span> <span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_predict</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">cm</span><span class="p">,</span> <span class="n">annot</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>/srv/conda/envs/notebook/lib/python3.7/site-packages/sklearn/model_selection/_split.py:670: DeprecationWarning: `np.int` is a deprecated alias for the builtin `int`. To silence this warning, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  test_folds = np.zeros(n_samples, dtype=np.int)
+/srv/conda/envs/notebook/lib/python3.7/site-packages/sklearn/model_selection/_split.py:442: DeprecationWarning: `np.int` is a deprecated alias for the builtin `int`. To silence this warning, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  fold_sizes = np.full(n_splits, n_samples // n_splits, dtype=np.int)
+/srv/conda/envs/notebook/lib/python3.7/site-packages/sklearn/model_selection/_split.py:102: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  test_mask = np.zeros(_num_samples(X), dtype=np.bool)
+/srv/conda/envs/notebook/lib/python3.7/site-packages/sklearn/model_selection/_split.py:442: DeprecationWarning: `np.int` is a deprecated alias for the builtin `int`. To silence this warning, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  fold_sizes = np.full(n_splits, n_samples // n_splits, dtype=np.int)
+/srv/conda/envs/notebook/lib/python3.7/site-packages/sklearn/model_selection/_split.py:102: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  test_mask = np.zeros(_num_samples(X), dtype=np.bool)
+/srv/conda/envs/notebook/lib/python3.7/site-packages/sklearn/model_selection/_split.py:442: DeprecationWarning: `np.int` is a deprecated alias for the builtin `int`. To silence this warning, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  fold_sizes = np.full(n_splits, n_samples // n_splits, dtype=np.int)
+/srv/conda/envs/notebook/lib/python3.7/site-packages/sklearn/model_selection/_split.py:102: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  test_mask = np.zeros(_num_samples(X), dtype=np.bool)
+/srv/conda/envs/notebook/lib/python3.7/site-packages/sklearn/model_selection/_split.py:442: DeprecationWarning: `np.int` is a deprecated alias for the builtin `int`. To silence this warning, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  fold_sizes = np.full(n_splits, n_samples // n_splits, dtype=np.int)
+/srv/conda/envs/notebook/lib/python3.7/site-packages/sklearn/model_selection/_split.py:102: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  test_mask = np.zeros(_num_samples(X), dtype=np.bool)
+/srv/conda/envs/notebook/lib/python3.7/site-packages/sklearn/model_selection/_split.py:442: DeprecationWarning: `np.int` is a deprecated alias for the builtin `int`. To silence this warning, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  fold_sizes = np.full(n_splits, n_samples // n_splits, dtype=np.int)
+/srv/conda/envs/notebook/lib/python3.7/site-packages/sklearn/model_selection/_split.py:102: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  test_mask = np.zeros(_num_samples(X), dtype=np.bool)
+/srv/conda/envs/notebook/lib/python3.7/site-packages/sklearn/model_selection/_split.py:442: DeprecationWarning: `np.int` is a deprecated alias for the builtin `int`. To silence this warning, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  fold_sizes = np.full(n_splits, n_samples // n_splits, dtype=np.int)
+/srv/conda/envs/notebook/lib/python3.7/site-packages/sklearn/model_selection/_split.py:102: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  test_mask = np.zeros(_num_samples(X), dtype=np.bool)
+/srv/conda/envs/notebook/lib/python3.7/site-packages/sklearn/model_selection/_split.py:102: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  test_mask = np.zeros(_num_samples(X), dtype=np.bool)
+/srv/conda/envs/notebook/lib/python3.7/site-packages/sklearn/model_selection/_split.py:102: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  test_mask = np.zeros(_num_samples(X), dtype=np.bool)
+/srv/conda/envs/notebook/lib/python3.7/site-packages/sklearn/model_selection/_split.py:102: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  test_mask = np.zeros(_num_samples(X), dtype=np.bool)
+/srv/conda/envs/notebook/lib/python3.7/site-packages/sklearn/model_selection/_split.py:102: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  test_mask = np.zeros(_num_samples(X), dtype=np.bool)
+/srv/conda/envs/notebook/lib/python3.7/site-packages/sklearn/model_selection/_split.py:102: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  test_mask = np.zeros(_num_samples(X), dtype=np.bool)
+/srv/conda/envs/notebook/lib/python3.7/site-packages/sklearn/model_selection/_split.py:102: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  test_mask = np.zeros(_num_samples(X), dtype=np.bool)
+/srv/conda/envs/notebook/lib/python3.7/site-packages/sklearn/model_selection/_split.py:102: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  test_mask = np.zeros(_num_samples(X), dtype=np.bool)
+/srv/conda/envs/notebook/lib/python3.7/site-packages/sklearn/model_selection/_split.py:102: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  test_mask = np.zeros(_num_samples(X), dtype=np.bool)
+/srv/conda/envs/notebook/lib/python3.7/site-packages/sklearn/model_selection/_split.py:102: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  test_mask = np.zeros(_num_samples(X), dtype=np.bool)
+/srv/conda/envs/notebook/lib/python3.7/site-packages/sklearn/model_selection/_split.py:102: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  test_mask = np.zeros(_num_samples(X), dtype=np.bool)
+/srv/conda/envs/notebook/lib/python3.7/site-packages/sklearn/model_selection/_split.py:102: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  test_mask = np.zeros(_num_samples(X), dtype=np.bool)
+/srv/conda/envs/notebook/lib/python3.7/site-packages/sklearn/model_selection/_split.py:102: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  test_mask = np.zeros(_num_samples(X), dtype=np.bool)
+/srv/conda/envs/notebook/lib/python3.7/site-packages/sklearn/model_selection/_split.py:102: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  test_mask = np.zeros(_num_samples(X), dtype=np.bool)
+/srv/conda/envs/notebook/lib/python3.7/site-packages/sklearn/model_selection/_split.py:102: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  test_mask = np.zeros(_num_samples(X), dtype=np.bool)
+/srv/conda/envs/notebook/lib/python3.7/site-packages/sklearn/model_selection/_split.py:102: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  test_mask = np.zeros(_num_samples(X), dtype=np.bool)
+/srv/conda/envs/notebook/lib/python3.7/site-packages/sklearn/model_selection/_split.py:102: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  test_mask = np.zeros(_num_samples(X), dtype=np.bool)
+/srv/conda/envs/notebook/lib/python3.7/site-packages/sklearn/model_selection/_split.py:102: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  test_mask = np.zeros(_num_samples(X), dtype=np.bool)
+/srv/conda/envs/notebook/lib/python3.7/site-packages/sklearn/model_selection/_split.py:102: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  test_mask = np.zeros(_num_samples(X), dtype=np.bool)
+/srv/conda/envs/notebook/lib/python3.7/site-packages/sklearn/model_selection/_split.py:102: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  test_mask = np.zeros(_num_samples(X), dtype=np.bool)
+/srv/conda/envs/notebook/lib/python3.7/site-packages/sklearn/model_selection/_split.py:102: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  test_mask = np.zeros(_num_samples(X), dtype=np.bool)
+/srv/conda/envs/notebook/lib/python3.7/site-packages/sklearn/model_selection/_split.py:102: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  test_mask = np.zeros(_num_samples(X), dtype=np.bool)
+/srv/conda/envs/notebook/lib/python3.7/site-packages/sklearn/model_selection/_split.py:102: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  test_mask = np.zeros(_num_samples(X), dtype=np.bool)
+/srv/conda/envs/notebook/lib/python3.7/site-packages/sklearn/model_selection/_split.py:102: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  test_mask = np.zeros(_num_samples(X), dtype=np.bool)
+/srv/conda/envs/notebook/lib/python3.7/site-packages/sklearn/model_selection/_split.py:102: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  test_mask = np.zeros(_num_samples(X), dtype=np.bool)
+/srv/conda/envs/notebook/lib/python3.7/site-packages/sklearn/model_selection/_split.py:102: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  test_mask = np.zeros(_num_samples(X), dtype=np.bool)
+/srv/conda/envs/notebook/lib/python3.7/site-packages/sklearn/model_selection/_split.py:102: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  test_mask = np.zeros(_num_samples(X), dtype=np.bool)
+/srv/conda/envs/notebook/lib/python3.7/site-packages/sklearn/model_selection/_split.py:102: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  test_mask = np.zeros(_num_samples(X), dtype=np.bool)
+/srv/conda/envs/notebook/lib/python3.7/site-packages/sklearn/model_selection/_split.py:102: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  test_mask = np.zeros(_num_samples(X), dtype=np.bool)
+/srv/conda/envs/notebook/lib/python3.7/site-packages/sklearn/model_selection/_split.py:102: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  test_mask = np.zeros(_num_samples(X), dtype=np.bool)
+/srv/conda/envs/notebook/lib/python3.7/site-packages/sklearn/model_selection/_split.py:102: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  test_mask = np.zeros(_num_samples(X), dtype=np.bool)
+/srv/conda/envs/notebook/lib/python3.7/site-packages/sklearn/model_selection/_split.py:102: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  test_mask = np.zeros(_num_samples(X), dtype=np.bool)
+/srv/conda/envs/notebook/lib/python3.7/site-packages/sklearn/model_selection/_split.py:102: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  test_mask = np.zeros(_num_samples(X), dtype=np.bool)
+/srv/conda/envs/notebook/lib/python3.7/site-packages/sklearn/model_selection/_split.py:102: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  test_mask = np.zeros(_num_samples(X), dtype=np.bool)
+/srv/conda/envs/notebook/lib/python3.7/site-packages/sklearn/model_selection/_split.py:102: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  test_mask = np.zeros(_num_samples(X), dtype=np.bool)
+/srv/conda/envs/notebook/lib/python3.7/site-packages/sklearn/model_selection/_split.py:102: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  test_mask = np.zeros(_num_samples(X), dtype=np.bool)
+/srv/conda/envs/notebook/lib/python3.7/site-packages/sklearn/model_selection/_split.py:102: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  test_mask = np.zeros(_num_samples(X), dtype=np.bool)
+/srv/conda/envs/notebook/lib/python3.7/site-packages/sklearn/model_selection/_split.py:102: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  test_mask = np.zeros(_num_samples(X), dtype=np.bool)
+/srv/conda/envs/notebook/lib/python3.7/site-packages/sklearn/model_selection/_split.py:102: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  test_mask = np.zeros(_num_samples(X), dtype=np.bool)
+/srv/conda/envs/notebook/lib/python3.7/site-packages/sklearn/model_selection/_split.py:102: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  test_mask = np.zeros(_num_samples(X), dtype=np.bool)
+/srv/conda/envs/notebook/lib/python3.7/site-packages/sklearn/model_selection/_split.py:102: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  test_mask = np.zeros(_num_samples(X), dtype=np.bool)
+/srv/conda/envs/notebook/lib/python3.7/site-packages/sklearn/model_selection/_split.py:102: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  test_mask = np.zeros(_num_samples(X), dtype=np.bool)
+/srv/conda/envs/notebook/lib/python3.7/site-packages/sklearn/model_selection/_split.py:102: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  test_mask = np.zeros(_num_samples(X), dtype=np.bool)
+/srv/conda/envs/notebook/lib/python3.7/site-packages/sklearn/model_selection/_split.py:102: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  test_mask = np.zeros(_num_samples(X), dtype=np.bool)
+/srv/conda/envs/notebook/lib/python3.7/site-packages/sklearn/model_selection/_split.py:102: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  test_mask = np.zeros(_num_samples(X), dtype=np.bool)
+/srv/conda/envs/notebook/lib/python3.7/site-packages/sklearn/model_selection/_split.py:102: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  test_mask = np.zeros(_num_samples(X), dtype=np.bool)
+/srv/conda/envs/notebook/lib/python3.7/site-packages/sklearn/model_selection/_split.py:102: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  test_mask = np.zeros(_num_samples(X), dtype=np.bool)
+/srv/conda/envs/notebook/lib/python3.7/site-packages/sklearn/model_selection/_split.py:102: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  test_mask = np.zeros(_num_samples(X), dtype=np.bool)
+/srv/conda/envs/notebook/lib/python3.7/site-packages/sklearn/model_selection/_split.py:102: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  test_mask = np.zeros(_num_samples(X), dtype=np.bool)
+/srv/conda/envs/notebook/lib/python3.7/site-packages/sklearn/model_selection/_split.py:102: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  test_mask = np.zeros(_num_samples(X), dtype=np.bool)
+/srv/conda/envs/notebook/lib/python3.7/site-packages/sklearn/model_selection/_split.py:102: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  test_mask = np.zeros(_num_samples(X), dtype=np.bool)
+/srv/conda/envs/notebook/lib/python3.7/site-packages/sklearn/model_selection/_split.py:102: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  test_mask = np.zeros(_num_samples(X), dtype=np.bool)
+/srv/conda/envs/notebook/lib/python3.7/site-packages/sklearn/model_selection/_split.py:102: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  test_mask = np.zeros(_num_samples(X), dtype=np.bool)
+/srv/conda/envs/notebook/lib/python3.7/site-packages/sklearn/model_selection/_split.py:102: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  test_mask = np.zeros(_num_samples(X), dtype=np.bool)
+/srv/conda/envs/notebook/lib/python3.7/site-packages/sklearn/model_selection/_split.py:102: DeprecationWarning: `np.bool` is a deprecated alias for the builtin `bool`. To silence this warning, use `bool` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.bool_` here.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  test_mask = np.zeros(_num_samples(X), dtype=np.bool)
+/srv/conda/envs/notebook/lib/python3.7/site-packages/sklearn/neighbors/base.py:908: DeprecationWarning: `np.int` is a deprecated alias for the builtin `int`. To silence this warning, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  self._y = np.empty(y.shape, dtype=np.int)
+/srv/conda/envs/notebook/lib/python3.7/site-packages/sklearn/neighbors/base.py:908: DeprecationWarning: `np.int` is a deprecated alias for the builtin `int`. To silence this warning, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  self._y = np.empty(y.shape, dtype=np.int)
+/srv/conda/envs/notebook/lib/python3.7/site-packages/sklearn/neighbors/base.py:908: DeprecationWarning: `np.int` is a deprecated alias for the builtin `int`. To silence this warning, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  self._y = np.empty(y.shape, dtype=np.int)
+/srv/conda/envs/notebook/lib/python3.7/site-packages/sklearn/neighbors/base.py:908: DeprecationWarning: `np.int` is a deprecated alias for the builtin `int`. To silence this warning, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  self._y = np.empty(y.shape, dtype=np.int)
+/srv/conda/envs/notebook/lib/python3.7/site-packages/sklearn/neighbors/base.py:908: DeprecationWarning: `np.int` is a deprecated alias for the builtin `int`. To silence this warning, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  self._y = np.empty(y.shape, dtype=np.int)
+/srv/conda/envs/notebook/lib/python3.7/site-packages/sklearn/neighbors/base.py:908: DeprecationWarning: `np.int` is a deprecated alias for the builtin `int`. To silence this warning, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  self._y = np.empty(y.shape, dtype=np.int)
+/srv/conda/envs/notebook/lib/python3.7/site-packages/sklearn/neighbors/base.py:908: DeprecationWarning: `np.int` is a deprecated alias for the builtin `int`. To silence this warning, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  self._y = np.empty(y.shape, dtype=np.int)
+/srv/conda/envs/notebook/lib/python3.7/site-packages/sklearn/neighbors/base.py:908: DeprecationWarning: `np.int` is a deprecated alias for the builtin `int`. To silence this warning, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  self._y = np.empty(y.shape, dtype=np.int)
+/srv/conda/envs/notebook/lib/python3.7/site-packages/sklearn/neighbors/base.py:908: DeprecationWarning: `np.int` is a deprecated alias for the builtin `int`. To silence this warning, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  self._y = np.empty(y.shape, dtype=np.int)
+/srv/conda/envs/notebook/lib/python3.7/site-packages/sklearn/neighbors/base.py:908: DeprecationWarning: `np.int` is a deprecated alias for the builtin `int`. To silence this warning, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  self._y = np.empty(y.shape, dtype=np.int)
+/srv/conda/envs/notebook/lib/python3.7/site-packages/sklearn/neighbors/base.py:908: DeprecationWarning: `np.int` is a deprecated alias for the builtin `int`. To silence this warning, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  self._y = np.empty(y.shape, dtype=np.int)
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>                    precision    recall  f1-score   support
+
+            LAYING       1.00      1.00      1.00       377
+           SITTING       0.92      0.87      0.90       364
+          STANDING       0.89      0.93      0.91       390
+           WALKING       0.96      0.99      0.97       335
+WALKING_DOWNSTAIRS       0.99      0.95      0.97       278
+  WALKING_UPSTAIRS       0.98      0.98      0.98       316
+
+          accuracy                           0.95      2060
+         macro avg       0.96      0.95      0.95      2060
+      weighted avg       0.95      0.95      0.95      2060
+
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f27240e4f90&gt;</pre>
+</div>
+
+</div>
+
+<div class="output_area">
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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
+" />
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+</div>
+
+
+
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="sakibb019/Portfolio"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/Portfolio/2021/08/07/Human_Activity_Recognition_using_Machine_Learning.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/Portfolio/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/Portfolio/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/Portfolio/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>This is my Coding Blog where everyone see my code that what i am write in.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/sakibb019" title="sakibb019"><svg class="svg-icon grey"><use xlink:href="/Portfolio/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://www.linkedin.com/in/mdsakibmahmood" title="mdsakibmahmood"><svg class="svg-icon grey"><use xlink:href="/Portfolio/assets/minima-social-icons.svg#linkedin"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
