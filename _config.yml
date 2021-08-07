@@ -41,7 +41,7 @@ minima:
   social_links:
     linkedin: mdsakibmahmood
     github: sakibb019
-    Medium: sakib mahmood
+    medium: sakib mahmood
 
 # Set this to true to get LaTeX math equation support
 use_math: 
@@ -72,7 +72,7 @@ include:
 
 # This specifies what badges are turned on by default for notebook posts.
 default_badges:
-  github: true
+  github: false
   binder: true
   colab: true
 
