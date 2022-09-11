@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Title | Mohammad Sakib Mahmood Coding Blog</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Title" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="This is my Coding Blog where everyone see my code that what i am write in." />
+<meta property="og:description" content="This is my Coding Blog where everyone see my code that what i am write in." />
+<link rel="canonical" href="https://sakibb019.github.io/Portfolio/2022/09/11/counting-letter.ipynb.html" />
+<meta property="og:url" content="https://sakibb019.github.io/Portfolio/2022/09/11/counting-letter.ipynb.html" />
+<meta property="og:site_name" content="Mohammad Sakib Mahmood Coding Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-09-11T00:00:00-05:00" />
+<script type="application/ld+json">
+{"datePublished":"2022-09-11T00:00:00-05:00","url":"https://sakibb019.github.io/Portfolio/2022/09/11/counting-letter.ipynb.html","@type":"BlogPosting","headline":"Title","dateModified":"2022-09-11T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://sakibb019.github.io/Portfolio/2022/09/11/counting-letter.ipynb.html"},"description":"This is my Coding Blog where everyone see my code that what i am write in.","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/Portfolio/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://sakibb019.github.io/Portfolio/feed.xml" title="Mohammad Sakib Mahmood Coding Blog" /><link rel="shortcut icon" type="image/x-icon" href="/Portfolio/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/Portfolio/">Mohammad Sakib Mahmood Coding Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/Portfolio/about/">About Me</a><a class="page-link" href="/Portfolio/search/">Search</a><a class="page-link" href="/Portfolio/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Title</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-09-11T00:00:00-05:00" itemprop="datePublished">
+        Sep 11, 2022
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      4 min read
+    
+</span></p>
+
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-wrap flex-justify-end">
+          
+          <div class="px-2">
+    <a href="https://mybinder.org/v2/gh/sakibb019/Portfolio/master?filepath=_notebooks%2F2022-09-11-counting-letter.ipynb.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/Portfolio/assets/badges/binder.svg" alt="Open In Binder"/>
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://colab.research.google.com/github/sakibb019/Portfolio/blob/master/_notebooks/2022-09-11-counting-letter.ipynb.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/Portfolio/assets/badges/colab.svg" alt="Open In Colab"/>
+    </a>
+</div>
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2022-09-11-counting-letter.ipynb.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Counting-letter-using-the-python-language"><em>Counting letter using the python language</em><a class="anchor-link" href="#Counting-letter-using-the-python-language"> </a></h1><ul>
+<li>comments: true</li>
+<li>badges: true</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
+
+<span class="n">fname</span> <span class="o">=</span> <span class="s2">&quot;Wordle_MysteryWords.csv&quot;</span>
+
+<span class="k">def</span> <span class="nf">readfile</span><span class="p">(</span><span class="n">fname</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;Reads a file and return the contents as a string&#39;&#39;&#39;</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>  
+    <span class="n">text</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>       
+    <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>             
+    <span class="k">return</span> <span class="n">text</span>    
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">count_letters</span><span class="p">(</span><span class="n">words</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;Returns a dictionary with letters and their counts&#39;&#39;&#39;</span>
+    <span class="k">pass</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">words</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">word</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">char</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">d</span><span class="p">:</span>
+                <span class="n">d</span><span class="p">[</span><span class="n">char</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">d</span><span class="p">[</span><span class="n">char</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">d</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">count_words</span><span class="p">(</span><span class="n">words</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;Returns a dictionary with letters and the number of words each</span>
+<span class="sd">       letter occurs in&#39;&#39;&#39;</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">words</span><span class="p">:</span>
+        <span class="n">chars</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">chars</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">char</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">d</span><span class="p">:</span>
+                <span class="n">d</span><span class="p">[</span><span class="n">char</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">d</span><span class="p">[</span><span class="n">char</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">d</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">count_mult</span><span class="p">(</span><span class="n">words</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;Returns a dictionary with the number of times a letter</span>
+<span class="sd">       occurs multiple times in a word&#39;&#39;&#39;</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">words</span><span class="p">:</span>
+        <span class="n">c</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">c</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">c</span><span class="p">[</span><span class="n">char</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">char</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">d</span><span class="p">:</span>
+                    <span class="n">d</span><span class="p">[</span><span class="n">char</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">d</span><span class="p">[</span><span class="n">char</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">d</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">count_pos</span><span class="p">(</span><span class="n">words</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;Returns a dictionary with the number of times each letter occurs</span>
+<span class="sd">       in each position in a word&#39;&#39;&#39;</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">words</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">word</span><span class="p">)):</span>
+            <span class="n">char</span> <span class="o">=</span> <span class="n">word</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">char</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">d</span><span class="p">:</span>
+                <span class="n">d</span><span class="p">[</span><span class="n">char</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="mi">5</span>
+            <span class="n">d</span><span class="p">[</span><span class="n">char</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span> 
+    <span class="k">return</span> <span class="n">d</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">count_letters2</span><span class="p">(</span><span class="n">words</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;Use a Counter; functionally the same as count_letters()&#39;&#39;&#39;</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">words</span><span class="p">:</span>
+        <span class="n">c</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">c</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">show_counts</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">title</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;Print the keys and values from dictionary d&#39;&#39;&#39;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
+    <span class="n">keylist</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+    <span class="n">keylist</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">keylist</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">d</span><span class="p">[</span><span class="n">key</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="n">wordstr</span> <span class="o">=</span> <span class="n">readfile</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">wordstr</span><span class="p">[:</span><span class="mi">30</span><span class="p">])</span>  
+    <span class="n">wordlist</span> <span class="o">=</span> <span class="n">wordstr</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>  
+    <span class="nb">print</span><span class="p">(</span><span class="n">wordlist</span><span class="p">[:</span><span class="mi">20</span><span class="p">])</span>  
+    <span class="nb">print</span><span class="p">(</span><span class="n">wordlist</span><span class="p">[</span><span class="o">-</span><span class="mi">20</span><span class="p">:])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">count_letters</span><span class="p">(</span><span class="n">wordlist</span><span class="p">),</span> <span class="s2">&quot;Number of times each letter occurs&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">count_letters2</span><span class="p">(</span><span class="n">wordlist</span><span class="p">),</span> <span class="s2">&quot;Number of times each letter occurs&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">count_words</span><span class="p">(</span><span class="n">wordlist</span><span class="p">),</span> <span class="s2">&quot;Number of words each letter occurs in&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">count_mult</span><span class="p">(</span><span class="n">wordlist</span><span class="p">),</span> <span class="s2">&quot;Counts of letters in multiple words&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">count_pos</span><span class="p">(</span><span class="n">wordlist</span><span class="p">),</span><span class="s2">&quot;Number of times each letter occurs in each position&quot;</span><span class="p">)</span>
+<span class="n">main</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>abhor
+abide
+abled
+abode
+abort
+
+[&#39;abhor&#39;, &#39;abide&#39;, &#39;abled&#39;, &#39;abode&#39;, &#39;abort&#39;, &#39;about&#39;, &#39;above&#39;, &#39;abuse&#39;, &#39;abyss&#39;, &#39;acorn&#39;, &#39;acrid&#39;, &#39;actor&#39;, &#39;acute&#39;, &#39;adage&#39;, &#39;adapt&#39;, &#39;adept&#39;, &#39;admin&#39;, &#39;admit&#39;, &#39;adobe&#39;, &#39;adopt&#39;]
+[&#39;wrath&#39;, &#39;wreak&#39;, &#39;wreck&#39;, &#39;wrest&#39;, &#39;wring&#39;, &#39;wrist&#39;, &#39;write&#39;, &#39;wrong&#39;, &#39;wrote&#39;, &#39;wrung&#39;, &#39;wryly&#39;, &#39;yacht&#39;, &#39;yearn&#39;, &#39;yeast&#39;, &#39;yield&#39;, &#39;young&#39;, &#39;youth&#39;, &#39;zebra&#39;, &#39;zesty&#39;, &#39;zonal&#39;]
+{&#39;a&#39;: 971, &#39;b&#39;: 274, &#39;h&#39;: 389, &#39;o&#39;: 753, &#39;r&#39;: 899, &#39;i&#39;: 671, &#39;d&#39;: 393, &#39;e&#39;: 1230, &#39;l&#39;: 719, &#39;t&#39;: 727, &#39;u&#39;: 467, &#39;v&#39;: 153, &#39;s&#39;: 668, &#39;y&#39;: 424, &#39;c&#39;: 476, &#39;n&#39;: 575, &#39;g&#39;: 311, &#39;p&#39;: 367, &#39;m&#39;: 316, &#39;f&#39;: 230, &#39;x&#39;: 37, &#39;w&#39;: 195, &#39;k&#39;: 209, &#39;z&#39;: 40, &#39;j&#39;: 27, &#39;q&#39;: 29} Number of times each letter occurs
+Counter({&#39;e&#39;: 1230, &#39;a&#39;: 971, &#39;r&#39;: 899, &#39;o&#39;: 753, &#39;t&#39;: 727, &#39;l&#39;: 719, &#39;i&#39;: 671, &#39;s&#39;: 668, &#39;n&#39;: 575, &#39;c&#39;: 476, &#39;u&#39;: 467, &#39;y&#39;: 424, &#39;d&#39;: 393, &#39;h&#39;: 389, &#39;p&#39;: 367, &#39;m&#39;: 316, &#39;g&#39;: 311, &#39;b&#39;: 274, &#39;f&#39;: 230, &#39;k&#39;: 209, &#39;w&#39;: 195, &#39;v&#39;: 153, &#39;z&#39;: 40, &#39;x&#39;: 37, &#39;q&#39;: 29, &#39;j&#39;: 27}) Number of times each letter occurs
+{&#39;a&#39;: 904, &#39;o&#39;: 672, &#39;r&#39;: 837, &#39;b&#39;: 262, &#39;h&#39;: 379, &#39;i&#39;: 647, &#39;e&#39;: 1053, &#39;d&#39;: 370, &#39;l&#39;: 648, &#39;t&#39;: 665, &#39;u&#39;: 457, &#39;v&#39;: 149, &#39;s&#39;: 617, &#39;y&#39;: 416, &#39;n&#39;: 550, &#39;c&#39;: 447, &#39;g&#39;: 300, &#39;p&#39;: 346, &#39;m&#39;: 298, &#39;f&#39;: 207, &#39;x&#39;: 37, &#39;w&#39;: 194, &#39;k&#39;: 201, &#39;z&#39;: 35, &#39;j&#39;: 27, &#39;q&#39;: 29} Number of words each letter occurs in
+{&#39;s&#39;: 49, &#39;a&#39;: 67, &#39;f&#39;: 22, &#39;o&#39;: 81, &#39;g&#39;: 11, &#39;e&#39;: 172, &#39;i&#39;: 24, &#39;l&#39;: 71, &#39;n&#39;: 23, &#39;p&#39;: 19, &#39;r&#39;: 60, &#39;t&#39;: 61, &#39;u&#39;: 10, &#39;b&#39;: 11, &#39;d&#39;: 22, &#39;c&#39;: 29, &#39;m&#39;: 15, &#39;y&#39;: 8, &#39;z&#39;: 5, &#39;h&#39;: 10, &#39;k&#39;: 8, &#39;v&#39;: 4, &#39;w&#39;: 1} Counts of letters in multiple words
+{&#39;a&#39;: [136, 304, 304, 163, 64], &#39;b&#39;: [173, 11, 55, 24, 11], &#39;h&#39;: [69, 144, 9, 28, 139], &#39;o&#39;: [41, 279, 244, 131, 58], &#39;r&#39;: [105, 267, 163, 152, 212], &#39;i&#39;: [34, 202, 266, 158, 11], &#39;d&#39;: [111, 20, 75, 69, 118], &#39;e&#39;: [72, 242, 177, 317, 422], &#39;l&#39;: [88, 201, 112, 162, 156], &#39;t&#39;: [149, 77, 111, 138, 252], &#39;u&#39;: [33, 186, 165, 82, 1], &#39;v&#39;: [43, 15, 49, 46, 0], &#39;s&#39;: [366, 16, 80, 170, 36], &#39;y&#39;: [6, 23, 29, 3, 363], &#39;c&#39;: [198, 40, 56, 151, 31], &#39;n&#39;: [37, 87, 139, 182, 130], &#39;g&#39;: [115, 12, 67, 76, 41], &#39;p&#39;: [142, 61, 58, 50, 56], &#39;m&#39;: [107, 38, 61, 68, 42], &#39;f&#39;: [136, 8, 25, 35, 26], &#39;x&#39;: [0, 14, 12, 3, 8], &#39;w&#39;: [83, 44, 26, 25, 17], &#39;k&#39;: [20, 10, 12, 55, 112], &#39;z&#39;: [3, 2, 11, 20, 4], &#39;j&#39;: [20, 2, 3, 2, 0], &#39;q&#39;: [23, 5, 1, 0, 0]} Number of times each letter occurs in each position
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+</div>
+
+
+
+  </div><a class="u-url" href="/Portfolio/2022/09/11/counting-letter.ipynb.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/Portfolio/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/Portfolio/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/Portfolio/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>This is my Coding Blog where everyone see my code that what i am write in.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/sakibb019" target="_blank" title="sakibb019"><svg class="svg-icon grey"><use xlink:href="/Portfolio/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://www.linkedin.com/in/mdsakibmahmood" target="_blank" title="mdsakibmahmood"><svg class="svg-icon grey"><use xlink:href="/Portfolio/assets/minima-social-icons.svg#linkedin"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
